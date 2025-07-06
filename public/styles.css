@@ -1,0 +1,247 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-left: 10px;
+}
+
+.header-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Chat Container */
+#chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* Message Styles */
+.message {
+    display: flex;
+    margin-bottom: 15px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.user-message {
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.bot-avatar {
+    background-color: #f0f4f8;
+}
+
+.bot-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.user-avatar {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 12px 15px;
+    border-radius: 18px;
+    word-wrap: break-word;
+}
+
+.bot-content {
+    background-color: #f0f4f8;
+    color: #2c3e50;
+    border-top-left-radius: 5px;
+}
+
+.user-content {
+    background-color: #3498db;
+    color: white;
+    border-top-right-radius: 5px;
+}
+
+/* Mood-specific message styles */
+.happy .bot-content {
+    background-color: #e8f5e9;
+    border-left: 3px solid #4caf50;
+}
+
+.sad .bot-content {
+    background-color: #e8eaf6;
+    border-left: 3px solid #3f51b5;
+}
+
+.angry .bot-content {
+    background-color: #ffebee;
+    border-left: 3px solid #f44336;
+}
+
+.excited .bot-content {
+    background-color: #fff8e1;
+    border-left: 3px solid #ffc107;
+}
+
+.nervous .bot-content {
+    background-color: #e0f7fa;
+    border-left: 3px solid #00bcd4;
+}
+
+.bored .bot-content {
+    background-color: #f3e5f5;
+    border-left: 3px solid #9c27b0;
+}
+
+.confused .bot-content {
+    background-color: #fce4ec;
+    border-left: 3px solid #e91e63;
+}
+
+/* Input Area */
+#input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #e1e4e8;
+}
+
+#message-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #e1e4e8;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+#message-input:focus {
+    border-color: #3498db;
+}
+
+#send-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#send-button:hover {
+    background-color: #2980b9;
+}
+
+/* Mood Display */
+#mood-display, #language-display {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#language-display {
+    margin-left: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #e1e4e8;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+#status-indicator {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #e1e4e8;
+}
+
+#status-indicator.thinking {
+    background-color: #f39c12;
+    color: white;
+}
+
+#status-indicator.error {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .message-content {
+        max-width: 80%;
+    }
+    
+    header h1 {
+        font-size: 20px;
+    }
+}
