@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // OpenRouter API configuration
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || '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';
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || 'Your OpenRouter Ai Key';
 
 // API endpoint to process user messages
 app.post('/api/chat', async (req, res) => {
